@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="909dc372-b7b8-40df-958d-6c52647539e8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/SphereFactor.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_tools.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2z3V9SuCkU8ms5w0YcszDxhz6Zh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests for test_tools.test_calc_angular_part_with_high_degree.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_calc_angular_part_with_some_pseudo_random_values.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_calc_angular_part_with_zeros.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_calc_radial_part_with_basic_inputs.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_cart2sph_phys.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_cart2sph_phys_x.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_cart2sph_phys_y.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_read_and_convert.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_read_nfs_measurements.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_sph_harm.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_sph_harm_y.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_spherical_harmonic.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_spherical_harmonic_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_spherical_harmonic_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_spherical_harmonic_3.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_spherical_harmonic_4.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_spherical_harmonic_5.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_spherical_harmonic_6.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_spherical_harmonic_7.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_spherical_hn1_basic_case.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_tools.test_spherical_hn1_large_inputs.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_tools.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in tests.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_tools.test_calc_radial_part_with_multiple_kr.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_tools.test_process_file_valid_input.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_tools.test_read_and_convert.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_tools.test_read_nfs_measurements.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for tests.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for tests.test_tools.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_tools.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/tom/PycharmProjects/SphereFactor&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Python tests.pytest for test_tools.test_read_and_convert">
+    <configuration name="pytest for test_tools.test_calc_radial_part_with_multiple_kr" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="SphereFactor" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_tools.test_calc_radial_part_with_multiple_kr&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_tools.test_process_file_valid_input" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="SphereFactor" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_tools.test_process_file_valid_input&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_tools.test_read_and_convert" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="SphereFactor" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_tools.test_read_and_convert&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_tools.test_read_nfs_measurements" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="SphereFactor" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_tools.test_read_nfs_measurements&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for tests" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="SphereFactor" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest for test_tools.test_read_and_convert" />
+        <item itemvalue="Python tests.pytest for test_tools.test_process_file_valid_input" />
+        <item itemvalue="Python tests.pytest for test_tools.test_read_nfs_measurements" />
+        <item itemvalue="Python tests.pytest for tests" />
+        <item itemvalue="Python tests.pytest for test_tools.test_calc_radial_part_with_multiple_kr" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-53e2683a6804-9cdd278e9d02-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.26094.141" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="909dc372-b7b8-40df-958d-6c52647539e8" name="Changes" comment="" />
+      <created>1750959591573</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750959591573</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/tools.py</url>
+          <line>231</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
