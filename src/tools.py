@@ -1,6 +1,9 @@
 import glob
+import os.path
+
 import soundfile as sf
 import numpy as np
+from matplotlib import pyplot as plt
 from scipy.special import spherical_yn, spherical_jn, sph_harm_y
 
 
@@ -24,8 +27,10 @@ def read_nfs_measurements(subdir: str) -> tuple[np.ndarray, np.ndarray, np.ndarr
         tuple: (p, r, theta, z, f) containing pressure values, radius, angles,
                z-coordinates, and frequencies
     """
-    directory = f'Measurements/{subdir}/'
-    files = glob.glob(f'{directory}/*.wav')
+    directory = os.path.join('Measurements', subdir)
+    files = glob.glob(os.path.join(directory, '*.wav'))
+    # files = glob.glob(f'{directory}/*.wav')
+
 
     p = []
     r = []
@@ -52,8 +57,7 @@ def read_nfs_measurements(subdir: str) -> tuple[np.ndarray, np.ndarray, np.ndarr
 
 
 def process_file(file: str) -> tuple[str, np.ndarray, np.ndarray]:
-    filename = file.replace('.wav', '')
-    filename = filename.split('/')[-1]
+    filename = os.path.splitext(os.path.basename(file))[0]
     # Read the audio file
     hh, fs = sf.read(file)
     freq, p, = ir_to_fr(fs, hh)  # The same up to here with mataa. Now some magic is being done
@@ -91,7 +95,7 @@ def ir_to_fr(fs: float, hh: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     # For now using placeholder frequency response calculation
     n_fft = len(hh)
     freq = np.fft.rfftfreq(n_fft, 1 / fs)[1:]  # TODO this could be done only once
-    p = np.fft.rfft(hh, n_fft)[1:]
+    p = np.fft.rfft(hh, n_fft)[1:]  # TODO It looks like the imaginary part is multiplied by -1 wrt octave
     return freq, p
 
 
@@ -212,8 +216,8 @@ def convert_to_coefficients(z: np.ndarray, r: np.ndarray, theta: np.ndarray, p: 
 
     sph_harm_vals = calc_angular_part(phi, theta, n)
 
-    cd = np.zeros((((n + 1) ** 2), len(f)))
-    cd_tot = np.zeros((2 * ((n + 1) ** 2), len(f)))
+    cd = np.zeros((((n + 1) ** 2), len(f)), dtype=complex)
+    cd_tot = np.zeros((2 * ((n + 1) ** 2), len(f)), dtype=complex)
     fit_error = np.zeros(len(f))
 
     for ind, freq in enumerate(f):
@@ -257,9 +261,9 @@ def spherical_harmonic(n: int, m: int, phi: np.ndarray, theta: np.ndarray) -> np
     y = sph_harm_y(n, abs(m), theta, phi)
     # Linear combination of Y_l,m and Y_l,-m to create the real form.
     if m < 0:
-        y = np.sqrt(2) * (-1)**m * y.imag
+        y = y.imag  # np.sqrt(2) * (-1)**m * : TODO this scaling is a difference with octave
     elif m > 0:
-        y = np.sqrt(2) * (-1)**m * y.real
+        y = y.real
 
     return y
 
@@ -277,14 +281,14 @@ def calc_angular_part(phi: np.ndarray, theta: np.ndarray, n: int) -> np.ndarray:
     Returns:
         numpy.ndarray: Array of shape (len(phi), (N+1)^2) containing spherical harmonics
     """
-    out = np.zeros((phi.size, (n + 1) ** 2))
+    out = np.zeros((phi.size, (n + 1) ** 2), dtype=complex)
 
     for n in range(n + 1):
         for m in range(-n, n + 1):
             j = n ** 2 + n + m
             # Note: scipy.special.sph_harm expects opposite order of angles
             # compared to typical physics convention
-            out[:, j] = sph_harm_y(m, n, phi, theta)
+            out[:, j] = spherical_harmonic(n, m, phi, theta)
 
     return out
 
@@ -337,7 +341,7 @@ def calc_radial_part_in(kr: np.ndarray, n: int) -> np.ndarray:
     Returns:
         numpy.ndarray: Array of shape (len(kr), (N+1)^2) containing radial values
     """
-    out = np.zeros((kr.size, (n + 1) ** 2))
+    out = np.zeros((kr.size, (n + 1) ** 2), dtype=complex)
 
     for n_val in range(n + 1):
         jn = spherical_jn(n_val, kr)
@@ -410,3 +414,56 @@ def extract_measurement_position_from_filename(filename: str) -> tuple[float, fl
     return r, theta, z
 
 
+def sph2cart_phys(phi, theta, r):
+    """Convert spherical to Cartesian coordinates (physics convention)"""
+    x = r * np.cos(phi) * np.sin(theta)
+    y = r * np.sin(phi) * np.sin(theta)
+    z = r * np.cos(theta)
+    return x, y, z
+
+
+def view_modes(N):
+    nr = 100
+
+    # Create meshgrid
+    theta, phi = np.meshgrid(np.linspace(0, np.pi, nr), np.linspace(-np.pi, np.pi, nr))
+
+    # Flatten arrays
+    theta = theta.flatten()
+    phi = phi.flatten()
+
+    # Create 3D figure
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+
+    # Plot for each n and m
+    for n in range(N + 1):
+        for m in range(-n, n + 1):
+            value = spherical_harmonic(n, m, phi, theta)
+            teken = np.sign(value)
+            r = np.abs(value)
+
+            # Convert to Cartesian coordinates
+            x, y, z = sph2cart_phys(phi, theta, r)
+
+            # Reshape for surface plot
+            x = x.reshape(nr, nr)
+            y = y.reshape(nr, nr) + m  # Offset in y direction
+            z = z.reshape(nr, nr) - 2 * n  # Offset in z direction
+            teken = teken.reshape(nr, nr)
+
+            # Create surface plot
+            surf = ax.plot_surface(x, y, z, facecolors=plt.cm.summer(teken))
+
+    # Set plot properties
+    ax.set_box_aspect([1, 1, 1])  # Equal aspect ratio
+    plt.colormap = 'summer'
+    plt.colorbar(surf)
+    ax.axis('off')
+
+    # Add lighting
+    ax.azim = -60
+    ax.elev = 20
+    ax.view_init(0, 0, 0)
+
+    plt.show()

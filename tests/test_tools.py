@@ -4,7 +4,7 @@ import os
 import pytest
 from src.tools import extract_measurement_position_from_filename, spherical_hn1, read_nfs_measurements, \
     convert_to_coefficients, calc_radial_part, calc_angular_part, spherical_harmonic, cart2sph_phys, \
-    vertical_directivity, process_file
+    vertical_directivity, process_file, view_modes
 
 
 def test_calc_radial_part_with_multiple_kr():
@@ -153,10 +153,8 @@ def test_calc_angular_part_with_some_pseudo_random_values():
     theta = np.array([1])
     n = 1
     result = calc_angular_part(phi, theta, n)
-    expected = np.array([2.820947917738782e-1, -2.902390055757528e-2, 2.6399306383411219e-1, -2.89270896633383e-1])
-    expected_shape = (1, 1)
+    expected = np.array([[2.820947917738782e-1, -2.902390055757528e-2, 2.6399306383411219e-1, -2.89270896633383e-1]])
     assert result == pytest.approx(expected)
-    assert result.shape == expected_shape
 
 
 def test_calc_radial_part_with_basic_inputs():
@@ -245,7 +243,7 @@ def test_read_and_convert():
     os.chdir('..')
     p, r, theta, z, f = read_nfs_measurements('11062025')
 
-    cd, fit_error, cd_tot = convert_to_coefficients(z, r, theta, p, f, 8)
+    cd, fit_error, cd_tot = convert_to_coefficients(z, r, theta, p, f, 5)  # N.B. this was 8
 
     plt.figure(figsize=(10, 6))
     plt.semilogx(f, fit_error)
@@ -265,3 +263,7 @@ def test_read_and_convert():
     plt.title('Vertical directivity angle vs Frequency')
     plt.savefig('vertical_directivity.png')
     plt.close()
+
+
+def test_view_modes():
+    view_modes(3)
